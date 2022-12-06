@@ -24,18 +24,22 @@ set(SOURCE_FILES
     ${GILDED_ROSE_SOURCE_FILES}
     ${GILDED_ROSE_TEXT_TESTS_SOURCE_FILES})
 
-
-
 add_executable(GildedRose ${GILDED_ROSE_SOURCE_FILES})
-target_link_libraries(GildedRose ${GTEST_MAIN_LIBRARY}
-                              ${GTEST_LIBRARY}
-                              ${GMOCK_MAIN_LIBRARY}
-                              ${GMOCK_LIBRARY}
-                              ${GTEST_BOTH_LIBRARIES})
+target_link_libraries(
+    GildedRose
+    ${GTEST_MAIN_LIBRARY}
+    ${GTEST_LIBRARY}
+    ${GMOCK_MAIN_LIBRARY}
+    ${GMOCK_LIBRARY}
+    ${GTEST_BOTH_LIBRARIES}
+)
 
 add_executable(GildedRoseTextTests ${GILDED_ROSE_TEXT_TESTS_SOURCE_FILES})
-target_link_libraries(GildedRoseTextTests ${GTEST_BOTH_LIBRARIES}
-                                          ${GTEST_MAIN_LIBRARY}
-                                          ${GTEST_LIBRARY}
-                                          ${GMOCK_MAIN_LIBRARY}
-                                          ${GMOCK_LIBRARY})
+target_link_libraries(
+    GildedRoseTextTests
+    ${GTEST_BOTH_LIBRARIES}
+    ${GTEST_MAIN_LIBRARY}
+    ${GTEST_LIBRARY}
+    ${GMOCK_MAIN_LIBRARY}
+    ${GMOCK_LIBRARY}
+)
