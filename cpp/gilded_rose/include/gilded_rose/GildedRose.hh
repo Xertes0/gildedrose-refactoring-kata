@@ -15,8 +15,8 @@ class GildedRose
 
 public:
     ::std::vector<Item> items;
-    explicit GildedRose(::std::vector<Item> && items);
-    explicit GildedRose(::std::vector<Item> const& items);
+    explicit GildedRose(::std::vector<Item> && items_);
+    explicit GildedRose(::std::vector<Item> const& items_);
 
     /**
      * <p>

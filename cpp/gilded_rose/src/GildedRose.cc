@@ -2,11 +2,11 @@
 
 #include <functional>
 
-GildedRose::GildedRose(::std::vector<Item> const &items) :
-    items(items) {}
+GildedRose::GildedRose(::std::vector<Item> const& items_) :
+    items(items_) {}
 
-GildedRose::GildedRose(::std::vector<Item> &&items) :
-    items(::std::move(items)) {}
+GildedRose::GildedRose(::std::vector<Item>&& items_) :
+    items(::std::move(items_)) {}
 
 void GildedRose::updateQuality()
 {
