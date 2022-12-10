@@ -1,8 +1,10 @@
 #!/bin/bash
 
-if [[ ! -d build ]]; then
-    mkdir -p build
+: "${BUILD_DIR:=build}"
+
+if [[ ! -d "$BUILD_DIR" ]]; then
+    mkdir -p "$BUILD_DIR"
 fi
 
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=DEBUG && cmake --build . && ctest --output-on-failure
+cd "$BUILD_DIR"
+cmake .. -DCMAKE_BUILD_TYPE:BOOL=Release && cmake --build . --parallel $(($(nproc)+1)) && ctest --output-on-failure
