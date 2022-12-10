@@ -8,6 +8,8 @@ struct Item
     ::std::string name;
     int sellIn;
     int quality;
+
+    Item(::std::string name_, int sellIn_, int quality_);
 };
 
 class GildedRose

@@ -2,6 +2,9 @@
 
 #include <functional>
 
+Item::Item(::std::string name_, int sellIn_, int quality_) :
+    name(std::move(name_)), sellIn(sellIn_), quality(quality_) {}
+
 GildedRose::GildedRose(::std::vector<Item> const& items_) :
     items(items_) {}
 
