@@ -15,6 +15,8 @@ endif()
 
 add_subdirectory(gilded_rose)
 
+include(CTest)
+enable_testing()
 include(cmake/External_GTest.cmake)
 include(GoogleTest)
 
