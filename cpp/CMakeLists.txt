@@ -13,7 +13,9 @@ if(NOT MSVC)
     set(CMAKE_CXX_LINK_FLAGS_DEBUG "${CMAKE_CXX_LINK_FLAGS_DEBUG} -fsanitize=address,leak,undefined")
 endif()
 
-include(cmake/External_GTest.cmake)
-
 add_subdirectory(gilded_rose)
+
+include(cmake/External_GTest.cmake)
+include(GoogleTest)
+
 add_subdirectory(tests)

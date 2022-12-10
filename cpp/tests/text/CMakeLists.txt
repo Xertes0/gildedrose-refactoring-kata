@@ -10,3 +10,5 @@ target_link_libraries(
     ${GMOCK_MAIN_LIBRARY}
     ${GMOCK_LIBRARY}
 )
+
+gtest_discover_tests(GildedRoseTextTests)

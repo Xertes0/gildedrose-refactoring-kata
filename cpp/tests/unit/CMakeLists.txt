@@ -10,3 +10,5 @@ target_link_libraries(
     ${GTEST_MAIN_LIBRARY}
     ${GTEST_LIBRARY}
 )
+
+gtest_discover_tests(GildedRoseUnitTests)
