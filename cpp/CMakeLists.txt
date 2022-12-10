@@ -8,41 +8,10 @@ set(CMAKE_CXX_EXTENSIONS ON)
 set(LIBRARY_OUTPUT_PATH build/)
 set(BINARY_OUTPUT_PATH build/)
 
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fsanitize=address,leak,undefined")
+set(CMAKE_CXX_FLAGS_DEBUG      "${CMAKE_CXX_FLAGS_DEBUG} -fsanitize=address,leak,undefined")
 set(CMAKE_CXX_LINK_FLAGS_DEBUG "${CMAKE_CXX_LINK_FLAGS_DEBUG} -fsanitize=address,leak,undefined")
 
-include(External_GTest.cmake)
+include(cmake/External_GTest.cmake)
 
-set(GILDED_ROSE_SOURCE_FILES
-    GildedRose.cc
-    GildedRose.h
-    GildedRoseUnitTests.cc)
-
-set(GILDED_ROSE_TEXT_TESTS_SOURCE_FILES
-    GildedRose.cc
-    GildedRose.h
-    GildedRoseTextTests.cc)
-
-set(SOURCE_FILES
-    ${GILDED_ROSE_SOURCE_FILES}
-    ${GILDED_ROSE_TEXT_TESTS_SOURCE_FILES})
-
-add_executable(GildedRose ${GILDED_ROSE_SOURCE_FILES})
-target_link_libraries(
-    GildedRose
-    ${GTEST_MAIN_LIBRARY}
-    ${GTEST_LIBRARY}
-    ${GMOCK_MAIN_LIBRARY}
-    ${GMOCK_LIBRARY}
-    ${GTEST_BOTH_LIBRARIES}
-)
-
-add_executable(GildedRoseTextTests ${GILDED_ROSE_TEXT_TESTS_SOURCE_FILES})
-target_link_libraries(
-    GildedRoseTextTests
-    ${GTEST_BOTH_LIBRARIES}
-    ${GTEST_MAIN_LIBRARY}
-    ${GTEST_LIBRARY}
-    ${GMOCK_MAIN_LIBRARY}
-    ${GMOCK_LIBRARY}
-)
+add_subdirectory(gilded_rose)
+add_subdirectory(tests)

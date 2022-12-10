@@ -1,4 +1,4 @@
-#include "GildedRose.h"
+#include <gilded_rose/GildedRose.hh>
 
 #include <iostream>
 
